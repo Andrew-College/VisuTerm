@@ -31,13 +31,13 @@ for piece in content:
 os.system("/bin/setfont /usr/share/consolefonts/Uni3-Terminus14.psf.gz")
 width = resolution[0]/8
 height = resolution[1]/14
-for i in range(0,height):
-	if i == 0 or i == height:
+for i in range(0,height-1):
+	if i == 0 or i == height-2:
 		for j in range(0,width):
-			os.system("tput cup " + str(height) + " " + str(width))
+			os.system("tput cup " + str(i) + " " + str(j))
 			printCbyC("#",0)
-	os.system("tput cup " + str(height) + " " + str(0))
+	os.system("tput cup " + str(i) + " " + str(0))
 	printCbyC("#",0)
-	os.system("tput cup " + str(height) + " " + str(width))
+	os.system("tput cup " + str(i) + " " + str(width))
 	printCbyC("#",0)
-print os.name
+
